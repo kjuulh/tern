@@ -14,11 +14,11 @@ workflow for managing database code such as functions and views.
 
 Go versions up to and including 1.17:
 
-    go get -u github.com/jackc/tern
+    go get -u github.com/kjuulh/tern
 
 Go versions 1.17 and higher:
 
-    go install github.com/jackc/tern@latest
+    go install github.com/kjuulh/tern@latest
 
 ## Creating a Tern Project
 
@@ -351,7 +351,7 @@ Tern will automatically use an SSH agent or `~/.ssh/id_rsa` if available.
 
 ## Embedding Tern
 
-All the actual functionality of tern is in the github.com/jackc/tern/migrate
+All the actual functionality of tern is in the github.com/kjuulh/tern/migrate
 library. If you need to embed migrations into your own application this
 library can help.
 

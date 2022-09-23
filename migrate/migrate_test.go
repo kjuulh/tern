@@ -8,7 +8,7 @@ import (
 
 	"github.com/jackc/pgconn"
 	"github.com/jackc/pgx/v4"
-	"github.com/jackc/tern/migrate"
+	"github.com/kjuulh/tern/migrate"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -390,7 +390,7 @@ func TestMigrateToDisableTx(t *testing.T) {
 	require.False(t, tableExists(t, conn, "t3"))
 }
 
-// // https://github.com/jackc/tern/issues/18
+// // https://github.com/kjuulh/tern/issues/18
 func TestNotCreatingVersionTableIfAlreadyVisibleInSearchPath(t *testing.T) {
 	conn := connectConn(t)
 	defer conn.Close(context.Background())

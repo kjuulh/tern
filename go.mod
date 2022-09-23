@@ -1,4 +1,4 @@
-module github.com/jackc/tern
+module github.com/kjuulh/tern
 
 go 1.13
 

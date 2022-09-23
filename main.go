@@ -439,7 +439,10 @@ func Migrate(cmd *cobra.Command, args []string) {
 	config, conn := loadConfigAndConnectToDB(ctx)
 	defer conn.Close(ctx)
 
-	migrator, err := migrate.NewMigrator(ctx, conn, config.VersionTable)
+	migrator, err := migrate.NewMigratorEx(ctx, conn, config.VersionTable, &migrate.MigratorOptions{
+		DisableTx:  true,
+		MigratorFS: migrate.DefaultMigratorFS{},
+	})
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error initializing migrator:\n  %v\n", err)
 		os.Exit(1)
